@@ -1,0 +1,18 @@
+@ECHO OFF
+IF DEFINED UNITY_DEV_PATH goto :UNITY
+IF DEFINED VISSCRIPT_DEV_PATH goto :VISSCRIPT
+
+ECHO UNITY_DEV_PATH is not set
+GOTO :EOF
+
+:UNITY
+    PUSHD %UNITY_DEV_PATH%
+    GOTO :RUN
+
+:VISSCRIPT
+    ECHO Can't `oo` from VisualScripting
+    GOTO :EOF
+
+:RUN
+    run o o
+    POPD
